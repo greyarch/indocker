@@ -1,0 +1,19 @@
+{
+  "name": "indocker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "indocker": "index.js"
+  },
+  "author": "Gantcho Kojuharov <gantcho@greyarch.net> (http://greyarch.net)",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^3.7.0",
+    "nomnom": "^1.8.1"
+  }
+}
