@@ -7,6 +7,8 @@ const spawn = require('child_process').spawn;
 const parser = require("nomnom");
 
 const options = parser
+  .script('indocker')
+  .help('indocker [options] [commands to execute]')
   .option('image', {
     abbr: 'i',
     help: 'use this docker image',
@@ -14,11 +16,11 @@ const options = parser
   })
   .option('entrypoint', {
     abbr: 'e',
-    help: 'set this as a docker run entrypoint'
+    help: 'will be used as a docker run entrypoint'
   })
   .option('command', {
     abbr: 'c',
-    help: 'set this as a docker run command'
+    help: 'will be used as a docker run command'
   })
   .option('dir', {
     abbr: 'd',
@@ -35,6 +37,9 @@ const options = parser
     help: 'execute as this user[:group]',
     default: '`id -u`:`id -g`'
   })
+  .option('opts', {
+    help: 'additional docker options to be passed as docker run options',
+  })
   .parse();
 
 
@@ -50,7 +55,9 @@ args = args.concat([
   '-v', `${outdir}:${outdir}`,
   '-w', indir,
   '-u', options.user,
-  options.image]);
+  options.opts || '',
+  options.image
+]);
 if(options.command) {args.push(options.command)};
 args = args.concat(options._);
 const opts = {
