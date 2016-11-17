@@ -10,6 +10,7 @@
   "bin": {
     "indocker": "index.js"
   },
+  "preferGlobal": true,
   "author": "Gantcho Kojuharov <gantcho@greyarch.net> (http://greyarch.net)",
   "license": "ISC",
   "dependencies": {
