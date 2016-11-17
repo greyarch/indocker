@@ -38,7 +38,11 @@ const options = parser
     default: '`id -u`:`id -g`'
   })
   .option('opts', {
-    help: 'additional docker options to be passed as docker run options',
+    help: 'additional docker options to be passed as docker run options'
+  })
+  .option('debug', {
+    flag: true,
+    hidden: true
   })
   .parse();
 
@@ -64,7 +68,12 @@ const opts = {
   shell: true
 };
 
-console.log('indocker is starting', options, args);
+if(options.debug) {
+  console.log('INDOCKER DEBUG:');
+  console.log(' OPTIONS:\n', options);
+  console.log();
+  console.log(' DOCKER ARGS:\n', args);
+}
 
 const ind = spawn(cmd, args, opts)
 
