@@ -1,6 +1,6 @@
 {
   "name": "indocker",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,9 @@
     "indocker": "index.js"
   },
   "preferGlobal": true,
-  "author": "Gantcho Kojuharov <gantcho@greyarch.net> (http://greyarch.net)",
+  "author": "Greyarch BV",
   "license": "ISC",
   "dependencies": {
-    "nomnom": "^1.8.1"
+    "commander": "^2.9.0"
   }
 }
