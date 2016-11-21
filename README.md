@@ -3,7 +3,7 @@
 ### Why
 One of the less obvious uses of [Docker](https://docker.com) containers is not as a service package, but as a tool. Let me explain.
 
-Imagine you are working on the next cool thing and all your great code build without a hiccup on your machine, but then you push it and the automated build fails. You dig in and it turns out, that the tools you're using to build locally are not installed on the build server, or even worse, there is some version mismatch.
+Imagine you are working on the next cool thing and all your great code builds without a hiccup on your machine, but then you push it and the automated build fails. You dig in and it turns out, that the tools you're using to build locally are not installed on the build server, or even worse, there is some version mismatch.
 
 One way to go would be to try and install the correct versions on the build box. Then have everyone in the team synchronize their dev boxes, so they do not run into the same problem. And every time you need a change in the build environment you and your team will need to do this again.
 
@@ -24,7 +24,7 @@ With yarn:
   yarn global add indocker
 ```
 ### Example
-To run *make* in *myorg/my-build-img* with current directory mounted inside the container and set as a working directory:
+To run *make* in *myorg/my-build-img* with the current directory mounted inside the container and set as a working directory:
 ```sh
   indocker -i myorg/my-build-img make
 ```
